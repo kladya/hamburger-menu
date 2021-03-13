@@ -1,0 +1,59 @@
+// Egyenlőségvizsgálat:
+
+@debug 1px == 1;
+@debug 1px == 1px;
+
+@debug 10px == 1cm;
+@debug 48px == 0.5in;
+@debug 0.9999999999999999999999 == 1;
+
+@debug Arial == 'Arial';
+@debug Arial == "Arial";
+@debug 'Arial' == "Arial";
+@debug Arial != "Arial";
+
+@debug true == true;
+@debug true != false;
+
+
+// Relációk:
+
+@debug 100 > 50;
+@debug 10px < 17px;
+@debug 96px >= 1in;
+@debug 10000ms <= 10s;
+
+
+// Matematikai operátorok:
+
+@debug 10s + 5s;
+@debug 10s - 50ms;
+@debug 10px * 2;
+@debug 10px * 2px;
+@debug (10px / 2);
+@debug 10px % 2;
+
+
+// String operátorok:
+
+@debug "Times " + "New Roman";
+
+.container::before {
+    font: 16px/16px "Times " + "New Roman", Times, serif;
+    content: track - list;
+    content: #{"track" + "list"};
+}
+
+$postfix: "--10";
+.col#{$postfix}::before {
+    font: 16px/16px "Times " + "New Roman", Times, serif;
+    content: track - list;
+    content: #{"track" + "list"};
+}
+
+
+// Logikai műveletek (boolean):
+
+@debug not true;
+@debug true and false;
+@debug true or false;
